@@ -1,3 +1,4 @@
+from datetime import date
 
 
 def factorial(n: int) -> int:
@@ -10,6 +11,7 @@ def factorial(n: int) -> int:
         result *= i
 
     return result
+# O(n) = 1 + (n + 1 - 2) * 1 = 1 + (n - 1) = n -> O(n)
 
 
 def fibonacci(n: int) -> list[int]:
@@ -28,11 +30,13 @@ def fibonacci(n: int) -> list[int]:
         i += 1
 
     return results
+# O(n) = 1 + 1 + n * (1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1) = 2 + 9n = n -> O(n)
 
 
 def count_ones(n: int) -> int:
     if not isinstance(n, int):  raise TypeError()
     if n < 0:  raise ValueError()
+    if n == 0: return 0
 
     result = []
 
@@ -48,6 +52,7 @@ def count_ones(n: int) -> int:
         str_result += str(item)
 
     return int(str_result)
+# O(n) = 1 + n * (1 + 1 + 1 + 1 + 1 + 1) + n + 1 + n = 2 + 6n + 2n = 2 + 8n = n -> O(n)
 
 
 def is_palindrome(x: int) -> bool:
@@ -64,8 +69,44 @@ def is_palindrome(x: int) -> bool:
         num //= 10
 
     return result == x
+# O(n) = 1 + 1 + n * (1 + 1 + 1 + 1 + 1) = 2 + 5n = n -> O(n)
 
+#   Problem:
+# Разработать алгоритм определяющий какие дни недели и месяцы наиболее популярны по посещаемости сайта,
+# и дни с наименьшей посещаемостью.
+#
+#   Output data:
+# список с n - количеством, дней недель в формате номера дня недели (int), начиная с 0, отсортированный начиная от самого популярного по посещаемости
+# список с n - количеством месяцев в формате номера месяца (int) отсортированный начиная от самого популярного по посещаемости
+#
+#   Input data:
+# массив кортежей в формате дата (date), количество посещений(int)
+# число int - количество вывода самых посещаемых дней и месяцев
+#
+#   Constrains:
+# •Ограничение на память: 256MB
+# •Ограничение на скорость: 2 секунды
+# •Максимальное количество записей в данных: 10^5
+#
+#   Example:
+# input:
+# [(2023-01-04,100
+# 2023-01-05,300
+# 2023-01-06,180
+# 2023-01-07,220
+# 2023-01-08,170
+# 2023-01-09,210
+# 2023-01-10,160
+# 2023-01-11,190
+# 2023-01-12,230
+# 2023-01-13,250)], 1
+#
+# output:
+# [2]
+# [1]
 
+def top_attendance(data: list[tuple[date, int]], count: int) -> tuple[list[int],list[int]]:
+    pass
 
 
 
