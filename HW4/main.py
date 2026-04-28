@@ -52,18 +52,22 @@ def recursive_sum(collection: list[int | float]) -> int | float:
 
     return collection[-1] + recursive_sum(collection[:-1])
 
+# O(n) = (1 + 1 + 1 + 1 + 1) * n = n -> O(n)
+
 
 def recursive_max(collection: list[int | float]) -> int | float:
     if not collection: return 0
     if len(collection) == 1: return collection[0]
 
     else:
-        if recursive_max(collection[:-1]) > collection[-1]:
 
+        if recursive_max(collection[:-1]) > collection[-1]:
             return recursive_max(collection[:-1])
 
         else:
             return collection[-1]
+
+# O(n) = (1 + 1 + 1 + 1 + 1 + 1 + 1 + 1) * n = n -> O(n)
 
 
 def recursive_sum_even(collection: list[int | float]) -> int | float:
@@ -78,6 +82,8 @@ def recursive_sum_even(collection: list[int | float]) -> int | float:
         else:
             return recursive_sum_even(collection[:-1])
 
+# O(n) = (1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1) * n = n -> O(n)
+
 
 def reverse_string(text: str) -> str:
     if not text: return ""
@@ -85,6 +91,8 @@ def reverse_string(text: str) -> str:
     if len(text) == 1: return text
 
     return text[-1] + reverse_string(text[:-1])
+
+# O(n) = (1 + 1 + 1 + 1 + 1 + 1) * n = n -> O(n)
 
 
 def is_palindrome(text: str) -> bool:
@@ -97,9 +105,32 @@ def is_palindrome(text: str) -> bool:
 
     return is_palindrome(text[1:-1])
 
+# O(n) = (1 + 1 + 1 + 1 + 1 + 1 + 1 + 1) * n = n -> O(n)
+
 
 def fibonacci(number: int) -> int:
-    pass
+    if number == 0: return 0
+
+    if number == 1 : return 1
+
+    if number == 2: return 1
+
+    return fibonacci(number-2) + fibonacci(number-1)
+
+# O(n) = (1 + 1 + 1 + 1 + 1) * n! = n! -> O(n!)
+
+
+def sum_of_digits(number: int) -> int:
+    if number < 0: raise ValueError()
+
+    if number == 0: return 0
+
+    if number % 10 > 0 and number // 10 == 0: return number
+
+    return sum_of_digits(number % 10) + sum_of_digits(number // 10)
+
+# O(n) = (1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1) * n = n -> O(n)
+
 
 
 

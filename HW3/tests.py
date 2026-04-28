@@ -1,6 +1,6 @@
 import pytest
 
-from HW3.main import max_in_range, rotate_and_reverse, reverse_even_numbers, add_one
+from HW3.main import max_in_range, rotate_and_reverse, reverse_even_numbers, add_one, binary_search
 
 
 @pytest.mark.parametrize(
@@ -51,3 +51,16 @@ def test_reverse_even_numbers(input, expected):
 )
 def test_add_one(input, expected):
     assert add_one(input) == expected
+
+
+@pytest.mark.parametrize(
+    "collection, target, expected", [
+        ([1,2,3,4,5,6,7,8,9,10], 8, 7),
+        ([-2, -1, 0, 1, 2, 3], -2, 0),
+        ([-2, -1, 0, 1, 2, 3], 3, 5),
+        ([1, 2], 2, 1),
+        ([1, 2, 3, 4, 5], 3, 2)
+    ]
+)
+def test_binary_search(collection, target, expected):
+    assert binary_search(collection, target) == expected

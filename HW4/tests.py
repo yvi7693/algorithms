@@ -2,7 +2,7 @@
 import pytest
 
 from HW4.main import bubble_sort, selection_sort, recursive_sum, recursive_max, recursive_sum_even, reverse_string, \
-    is_palindrome
+    is_palindrome, fibonacci, sum_of_digits
 
 
 @pytest.mark.parametrize(
@@ -99,5 +99,40 @@ def test_reverse_string_positive_and_boundary(input, expected):
 )
 def test_is_palindrome_positive_and_boundary(input, expected):
     assert is_palindrome(input) == expected
+
+
+@pytest.mark.parametrize(
+    "input, expected", [
+        (0, 0),
+        (1, 1),
+        (2, 1),
+        (3, 2),
+        (4, 3),
+        (8 ,21)
+
+    ]
+)
+def test_fibonacci_positive_and_boundary(input, expected):
+    assert fibonacci(input) == expected
+
+
+@pytest.mark.parametrize(
+    "input, expected", [
+        (123, 6),
+        (1, 1),
+        (0, 0),
+        (5, 5),
+        (10, 1),
+        (1213, 7),
+    ]
+)
+def test_sum_of_digits_positive_and_boundary(input, expected):
+    assert sum_of_digits(input) == expected
+
+
+def test_sum_of_digits_incorrect_value():
+
+    with pytest.raises(ValueError):
+        sum_of_digits(-123)
 
 

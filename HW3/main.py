@@ -111,3 +111,26 @@ def shift_left(collection: list[int | float]) -> list[int | float]:
     return collection
 # O(n) = 1 + 1 + n * (1 + 1 + 1 + 1) + 1 + 1 = 4 + 4n = n -> O(n)
 
+
+def binary_search(collection: list[Any], target: Any) -> int:
+
+    length = len(collection)
+
+    left = 0
+    right = length - 1
+
+    while left <= right:
+        current_index = (left + right) // 2
+
+        if target == collection[current_index]:
+            return current_index
+
+        if target < collection[current_index]:
+            right = current_index - 1
+
+        else:
+            left = current_index + 1
+
+    return -1
+
+# O(n) = 1 + 1 + 1 + 1 + 1 + log n = log n -> O(log n)
