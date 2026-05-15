@@ -45,6 +45,29 @@ def selection_sort(collection: list[Any],
 # Худший O(n^2)
 
 
+def insertion_sort(collection: list[Any], key = lambda obj: obj, order_by = lambda x, y: x > y) -> list[Any]:
+
+    length = len(collection)
+
+    for i in range(1, length):
+
+        buff  = collection[i]
+        j = i - 1
+
+        while j >= 0 and not order_by(key(collection[j]), key(buff)):
+
+            collection[j + 1] = collection[j]
+            j -= 1
+
+        collection[j+1] = buff
+
+    return collection
+
+# Лучший O(n)
+# Средний O(n^2)
+# Худший O(n^2)
+
+
 def recursive_sum(collection: list[int | float]) -> int | float:
     if not collection: return 0
 

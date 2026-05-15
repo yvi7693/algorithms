@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="adab9e0f-571d-40eb-a020-25ce74d0c16f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW3/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW3/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HW4/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW4/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW4/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW4/tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +61,7 @@
       <recent name="$PROJECT_DIR$/HW1" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Algorithms" />
       <option name="ENV_FILES" value="" />
